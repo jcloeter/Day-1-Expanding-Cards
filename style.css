@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Muli&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Muli, sans-seriff;
+  height: 100vh;
+  /* width: 1080px; */
+  /* Why did adding a width to the container mess so much up? */
+
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+
+  /* Removing height on container box allowed it to center */
+  /* height: 100%; */
+  width: 90vw;
+  margin: 0 auto;
+  justify-content: flex-end;
+}
+
+.panel {
+  border-radius: 50px;
+  height: 80vh;
+  margin: 5px;
+  flex: 1;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  transition: flex 0.7s ease-in;
+}
+
+.active {
+  flex: 10;
+}
+
+.panel h3 {
+  position: absolute;
+  opacity: 0;
+  bottom: 10px;
+  left: 30px;
+  display: none;
+  color: white;
+}
+
+.panel.active h3 {
+  display: block;
+  opacity: 1;
+  transition: opacity 5s;
+
+  /* transition: display 1s ease-in; */
+}
